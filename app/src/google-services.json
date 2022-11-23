@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "152248684424",
+    "project_id": "workoutfinalproject-2dcf2",
+    "storage_bucket": "workoutfinalproject-2dcf2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:152248684424:android:21d8a555f4f1cdd052343d",
+        "android_client_info": {
+          "package_name": "project.st991548772.vardhmanchandan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "152248684424-uhr6rn4pjkh208jm8sspc467lh2vc9nk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc-c_Miez6x0_O46xFd0skVsHUWFKXV4g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "152248684424-uhr6rn4pjkh208jm8sspc467lh2vc9nk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
