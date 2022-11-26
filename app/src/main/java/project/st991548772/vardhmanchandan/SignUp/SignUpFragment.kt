@@ -1,15 +1,21 @@
 package project.st991548772.vardhmanchandan.SignUp
 
+import android.content.ContentValues
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import project.st991548772.vardhmanchandan.R
 import project.st991548772.vardhmanchandan.databinding.FragmentSignUpBinding
 import java.util.*
@@ -18,9 +24,9 @@ import java.util.*
 class SignUpFragment : Fragment() {
 
 
-    private val signUpModel by lazy{
-        ViewModelProvider(this).get(SignUpViewModel::class.java)
-    }
+    val db = Firebase.firestore
+    private var user:User=User("","","","",0,"")
+
 
     private lateinit var binding:FragmentSignUpBinding
     override fun onCreateView(
@@ -30,6 +36,7 @@ class SignUpFragment : Fragment() {
         val view=inflater.inflate(R.layout.fragment_sign_up, container, false)
         binding = DataBindingUtil.setContentView(this.requireActivity(), R.layout.fragment_sign_up)
 
+        //setting array for spinner
         val genderList: ArrayList<String> = ArrayList()
         genderList.add("Male")
         genderList.add("Female")
@@ -54,8 +61,9 @@ class SignUpFragment : Fragment() {
             }
         }
 
+
         binding.signUp.setOnClickListener() {
-            signUpModel.addUser(
+            user=User(
                 binding.name.text.toString(),
                 binding.email.text.toString(),
                 binding.weight.text.toString(),
@@ -64,7 +72,18 @@ class SignUpFragment : Fragment() {
                 gender
             )
 
+            db.collection("users").document(binding.email.text.toString())
+                .set(user)
+                .addOnSuccessListener { Log.d(ContentValues.TAG, "DocumentSnapshot successfully written!") }
+                .addOnFailureListener { e -> Log.w(ContentValues.TAG, "Error writing document", e) }
+
+            var bundle:Bundle= bundleOf()
+            bundle.putString("email",binding.email.text.toString())
+            view.findNavController()
+                .navigate(R.id.action_signUpFragment_to_scheduleFragment,bundle)
         }
+
+
 
 
         return view
