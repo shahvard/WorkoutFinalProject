@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -176,6 +177,11 @@ class ScheduleFragment : Fragment() {
             binding.distance.text.clear()
 
 
+        }
+
+        binding.submit.setOnClickListener(){
+            view.findNavController()
+                .navigate(R.id.action_scheduleFragment_to_loginFragment)
         }
         return view
     }
