@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,30 +25,31 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Click on "
+        android:text="Click on the below buttons to add, edit or delete workout"
+        android:textColor="#ffffff"
         />
 
-    <Button
-        android:id="@+id/add"
-        android:layout_width="210dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="44dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="#ffcc00"
-        android:fontFamily="sans-serif"
-        android:text="Add Workout"
-        android:textAllCaps="false"
-        android:textColor="#ffffff"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        <Button
+            android:id="@+id/add"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#ffcc00"
+            android:fontFamily="sans-serif"
+            android:text="Add Workout"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
     <Button
         android:id="@+id/edit"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="25dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#ffcc00"
         android:fontFamily="sans-serif"
@@ -53,12 +59,27 @@
         android:textSize="30sp"
         android:textStyle="bold" />
 
-    <Button
+        <Button
+            android:id="@+id/view"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#ffcc00"
+            android:fontFamily="sans-serif"
+            android:text="View All Workouts"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <Button
         android:id="@+id/delete"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="25dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#ffcc00"
         android:fontFamily="sans-serif"
@@ -70,3 +91,5 @@
 
     </LinearLayout>
 </RelativeLayout>
+
+

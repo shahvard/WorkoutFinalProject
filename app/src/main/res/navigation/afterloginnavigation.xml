@@ -9,5 +9,51 @@
         android:id="@+id/homeFragment2"
         android:name="project.st991548772.vardhmanchandan.Home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment2_to_exerciseFragment"
+            app:destination="@id/exerciseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseFragment"
+        android:name="project.st991548772.vardhmanchandan.Exercise.ExerciseFragment"
+        android:label="ExerciseFragment"
+        tools:layout="@layout/fragment_exercise">
+        <action
+            android:id="@+id/action_exerciseFragment_to_exerciseCRUDFragment"
+            app:destination="@id/exerciseCRUDFragment" />
+        <action
+            android:id="@+id/action_exerciseFragment_to_addFragment"
+            app:destination="@id/addFragment" />
+        <action
+            android:id="@+id/action_exerciseFragment_to_viewFragment"
+            app:destination="@id/viewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseCRUDFragment"
+        android:name="project.st991548772.vardhmanchandan.Exercise.ExerciseCRUDFragment"
+        android:label="ExerciseCRUDFragment"
+        tools:layout="@layout/fragment_exercise_c_r_u_d">
+        <action
+            android:id="@+id/action_exerciseCRUDFragment_to_addFragment"
+            app:destination="@id/addFragment" />
+        <action
+            android:id="@+id/action_exerciseCRUDFragment_to_viewFragment"
+            app:destination="@id/viewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="project.st991548772.vardhmanchandan.AddExercise.AddFragment"
+        android:label="add_fragment"
+        tools:layout="@layout/add_fragment" >
+        <action
+            android:id="@+id/action_addFragment_to_exerciseFragment"
+            app:destination="@id/exerciseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewFragment"
+        android:name="project.st991548772.vardhmanchandan.ViewExercise.ViewFragment"
+        android:label="ViewFragment"
+        tools:layout="@layout/view_fragment"
+        />
 </navigation>

@@ -38,7 +38,7 @@ class ExerciseFragment : Fragment() {
 
 
     private fun setupViewPager(viewpager: ViewPager) {
-        var adapter: ViewPagerAdapter = ViewPagerAdapter(this.parentFragmentManager)
+        var adapter: ViewPagerAdapter = ViewPagerAdapter(this.childFragmentManager)
 
         // LoginFragment is the name of Fragment and the Login
         // is a title of tab
