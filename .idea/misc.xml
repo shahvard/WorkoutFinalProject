@@ -8,13 +8,17 @@
         <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.156" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.156" />
         <entry key="app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.156" />
+        <entry key="app/src/main/res/drawable/spinner_bg.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/spinnerbg.xml" value="0.118" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.16210739614994935" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/activity_navigation.xml" value="0.20199275362318841" />
         <entry key="app/src/main/res/layout/add_fragment.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/edit_fragment.xml" value="0.2930253623188406" />
+        <entry key="app/src/main/res/layout/exerciseeditlist_item.xml" value="0.17844202898550723" />
         <entry key="app/src/main/res/layout/exerciselist_item.xml" value="0.13380281690140844" />
         <entry key="app/src/main/res/layout/fragment_diet.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_edit_exercise.xml" value="0.18885869565217392" />
         <entry key="app/src/main/res/layout/fragment_exercise.xml" value="0.3063063063063063" />
         <entry key="app/src/main/res/layout/fragment_exercise_c_r_u_d.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_explore_exercise.xml" value="0.1259259259259259" />

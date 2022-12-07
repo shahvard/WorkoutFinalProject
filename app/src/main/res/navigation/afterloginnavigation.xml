@@ -11,23 +11,14 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment2_to_exerciseFragment"
-            app:destination="@id/exerciseFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/exerciseFragment"
-        android:name="project.st991548772.vardhmanchandan.Exercise.ExerciseFragment"
-        android:label="ExerciseFragment"
-        tools:layout="@layout/fragment_exercise">
-        <action
-            android:id="@+id/action_exerciseFragment_to_exerciseCRUDFragment"
+            android:id="@+id/action_homeFragment2_to_exerciseCRUDFragment"
             app:destination="@id/exerciseCRUDFragment" />
         <action
-            android:id="@+id/action_exerciseFragment_to_addFragment"
-            app:destination="@id/addFragment" />
+            android:id="@+id/action_homeFragment2_self"
+            app:destination="@id/homeFragment2" />
         <action
-            android:id="@+id/action_exerciseFragment_to_viewFragment"
-            app:destination="@id/viewFragment" />
+            android:id="@+id/action_homeFragment2_to_dietFragment"
+            app:destination="@id/dietFragment" />
     </fragment>
     <fragment
         android:id="@+id/exerciseCRUDFragment"
@@ -35,11 +26,14 @@
         android:label="ExerciseCRUDFragment"
         tools:layout="@layout/fragment_exercise_c_r_u_d">
         <action
+            android:id="@+id/action_exerciseCRUDFragment_to_viewFragment"
+            app:destination="@id/viewFragment" />
+        <action
             android:id="@+id/action_exerciseCRUDFragment_to_addFragment"
             app:destination="@id/addFragment" />
         <action
-            android:id="@+id/action_exerciseCRUDFragment_to_viewFragment"
-            app:destination="@id/viewFragment" />
+            android:id="@+id/action_exerciseCRUDFragment_to_editFragment"
+            app:destination="@id/editFragment" />
     </fragment>
     <fragment
         android:id="@+id/addFragment"
@@ -47,8 +41,8 @@
         android:label="add_fragment"
         tools:layout="@layout/add_fragment" >
         <action
-            android:id="@+id/action_addFragment_to_exerciseFragment"
-            app:destination="@id/exerciseFragment" />
+            android:id="@+id/action_addFragment_to_exerciseCRUDFragment"
+            app:destination="@id/exerciseCRUDFragment" />
     </fragment>
     <fragment
         android:id="@+id/viewFragment"
@@ -56,4 +50,14 @@
         android:label="ViewFragment"
         tools:layout="@layout/view_fragment"
         />
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="project.st991548772.vardhmanchandan.EditExercise.EditFragment"
+        android:label="EditFragment"
+        tools:layout="@layout/edit_fragment"/>
+    <fragment
+        android:id="@+id/dietFragment"
+        android:name="project.st991548772.vardhmanchandan.Diet.DietFragment"
+        android:label="fragment_diet"
+        tools:layout="@layout/fragment_diet" />
 </navigation>

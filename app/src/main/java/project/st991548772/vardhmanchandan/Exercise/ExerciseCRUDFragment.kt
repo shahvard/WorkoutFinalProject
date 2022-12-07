@@ -24,12 +24,17 @@ class ExerciseCRUDFragment : Fragment() {
         //binding= DataBindingUtil.setContentView(this.requireActivity(), R.layout.fragment_exercise_c_r_u_d)
         view.findViewById<Button>(R.id.add).setOnClickListener(){
             Navigation.findNavController(this.requireActivity(),R.id.add)
-                .navigate(R.id.action_exerciseFragment_to_addFragment)
+                .navigate(R.id.action_exerciseCRUDFragment_to_addFragment)
         }
 
     view.findViewById<Button>(R.id.view).setOnClickListener(){
         Navigation.findNavController(this.requireActivity(),R.id.add)
-            .navigate(R.id.action_exerciseFragment_to_viewFragment)
+            .navigate(R.id.action_exerciseCRUDFragment_to_viewFragment)
+    }
+
+    view.findViewById<Button>(R.id.edit).setOnClickListener(){
+        Navigation.findNavController(this.requireActivity(),R.id.edit)
+            .navigate(R.id.action_exerciseCRUDFragment_to_editFragment)
     }
 
         return view

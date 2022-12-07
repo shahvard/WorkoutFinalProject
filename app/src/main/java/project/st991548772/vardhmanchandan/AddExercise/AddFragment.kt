@@ -106,7 +106,7 @@ class AddFragment : Fragment() {
                 .set(record)
                 .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully written!")
                     Navigation.findNavController(this.requireView())
-                        .navigate(R.id.action_addFragment_to_exerciseFragment)
+                        .navigate(R.id.action_addFragment_to_exerciseCRUDFragment)
 
                     val builder = AlertDialog.Builder(this.requireContext())
                     builder.setMessage("Are you sure you want to Add?")

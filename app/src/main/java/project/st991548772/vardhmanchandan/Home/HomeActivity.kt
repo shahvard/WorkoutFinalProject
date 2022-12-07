@@ -5,10 +5,10 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import project.st991548772.vardhmanchandan.Diet.DietFragment
-import project.st991548772.vardhmanchandan.Exercise.ExerciseFragment
 import project.st991548772.vardhmanchandan.R
 
 class HomeActivity : AppCompatActivity() {

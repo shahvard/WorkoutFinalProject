@@ -12,12 +12,9 @@ import kotlinx.coroutines.launch
 
 class ViewViewModel : ViewModel() {
 
-        /*private val month:MutableLiveData<String> = MutableLiveData()
-        private val year:MutableLiveData<String> = MutableLiveData()*/
+
 
     val list:MutableLiveData<ArrayList<Record>> = MutableLiveData()
-
-
 
 
     fun getFromDatabase(month:Int,year:Int,email:String){
@@ -36,18 +33,12 @@ class ViewViewModel : ViewModel() {
                         Log.d(TAG, "${document.id} => ${document.data}")
 
                         ar.add(Record(document.data.get("Date").toString(),document.data.get("TypeOfWorkout").toString(),document.data.get("distance").toString(),document.data.get("duration").toString()))
-                        //Log.d("Date",document.data.get("Date").toString())
 
                     }
 
                 }
 
                 list.postValue(ar)
-
-
-               // Log.d("list",list.value!!.get(0).toString())
-
-
 
             }
         }
@@ -58,6 +49,6 @@ class ViewViewModel : ViewModel() {
 
 }
 
-data class Record(val Date:String,val typeOfWorkout:String, val distance:String, val duration:String) {
+data class Record(val Date:String,val TypeOfWorkout:String, val distance:String, val duration:String) {
 
 }

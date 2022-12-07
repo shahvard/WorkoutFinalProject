@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginTop="30dp" >
 
     <LinearLayout
@@ -13,12 +13,12 @@
         android:layout_height="wrap_content"
         android:background="#ffcc00"
         android:orientation="horizontal"
-        android:padding="24dp">
+        android:padding="15dp">
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_height="200dp"
             android:layout_marginTop="30dp"
             app:srcCompat="@drawable/ic_baseline_directions_run_24"
             tools:layout_editor_absoluteX="31dp"
@@ -32,33 +32,43 @@
             android:padding="24dp">
 
 
-            <TextView
+            <EditText
                 android:id="@+id/date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="7-5-2020"
                 android:textSize="25sp" />
 
-            <TextView
+            <EditText
                 android:id="@+id/type"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Running"
                 android:textSize="25sp" />
 
-            <TextView
+            <EditText
                 android:id="@+id/distance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="2km"
                 android:textSize="25sp" />
 
-            <TextView
+            <EditText
                 android:id="@+id/duration"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="5 minutes"
                 android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/confirmEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Edit"
+                android:textSize="25sp"
+                android:layout_marginTop="10dp"
+
+                />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.MutableLiveData
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import org.w3c.dom.Text
 import project.st991548772.vardhmanchandan.R
@@ -28,15 +29,16 @@ class ExerciseDisplayAdapter(private val list:ArrayList<Record>):RecyclerView.Ad
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = list.get(position)
-        when (currentItem?.typeOfWorkout) {
+        when (currentItem?.TypeOfWorkout) {
             "Running" -> holder.imageView.setImageResource(R.drawable.ic_baseline_directions_run_24)
             "Cycling" -> holder.imageView.setImageResource(R.drawable.ic_baseline_directions_bike_24)
             "Swimming" -> holder.imageView.setImageResource(R.drawable.swimming)
         }
         holder.dateTxt.text = currentItem.Date
-        holder.typeTxt.text = currentItem.typeOfWorkout
+        holder.typeTxt.text = currentItem.TypeOfWorkout
         holder.distanceTxt.text = currentItem.distance + " kms"
         holder.durationTxt.text = currentItem.duration + " minutes"
+
     }
 
 
