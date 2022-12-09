@@ -12,17 +12,18 @@
     android:background="#040720"
 
     >
-
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="25dp">
 
 
     <TextView
-
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Click on the below buttons to add, edit or delete workout"
@@ -34,7 +35,7 @@
             android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="50dp"
             android:layout_marginBottom="16dp"
             android:backgroundTint="#ffcc00"
             android:fontFamily="sans-serif"
@@ -53,7 +54,7 @@
         android:layout_marginBottom="16dp"
         android:backgroundTint="#ffcc00"
         android:fontFamily="sans-serif"
-        android:text="Edit Workout"
+        android:text="Edit or Delete Workout"
         android:textAllCaps="false"
         android:textColor="#ffffff"
         android:textSize="30sp"
@@ -64,7 +65,7 @@
             android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="25dp"
             android:layout_marginBottom="16dp"
             android:backgroundTint="#ffcc00"
             android:fontFamily="sans-serif"
@@ -74,22 +75,8 @@
             android:textSize="30sp"
             android:textStyle="bold" />
 
-        <Button
-        android:id="@+id/delete"
-        android:layout_width="210dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="#ffcc00"
-        android:fontFamily="sans-serif"
-        android:text="Delete Workout"
-        android:textAllCaps="false"
-        android:textColor="#ffffff"
-        android:textSize="30sp"
-        android:textStyle="bold" />
-
     </LinearLayout>
+</ScrollView>
 </RelativeLayout>
 
 

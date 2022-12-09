@@ -1,22 +1,16 @@
-package project.st991548772.vardhmanchandan.EditExercise
+package project.st991548772.vardhmanchandan.Exercise.EditExercise
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
-import androidx.fragment.app.FragmentActivity
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import project.st991548772.vardhmanchandan.MainActivity
 import project.st991548772.vardhmanchandan.R
-import project.st991548772.vardhmanchandan.ViewExercise.ExerciseDisplayAdapter
-import project.st991548772.vardhmanchandan.ViewExercise.Record
+import project.st991548772.vardhmanchandan.Exercise.ViewExercise.Record
 
 class ExerciseEditAdapter(private val list: ArrayList<Record>, private val email:String):
     RecyclerView.Adapter<ExerciseEditAdapter.MyViewHolder>() {
@@ -29,6 +23,7 @@ class ExerciseEditAdapter(private val list: ArrayList<Record>, private val email
         val distanceTxt: EditText =itemView.findViewById(R.id.distance)
         val durationTxt: EditText =itemView.findViewById(R.id.duration)
         val editTxt:TextView=itemView.findViewById(R.id.confirmEdit)
+        val deleteTxt:TextView=itemView.findViewById(R.id.confirmDelete)
     }
 
     override fun onCreateViewHolder(
@@ -78,6 +73,34 @@ class ExerciseEditAdapter(private val list: ArrayList<Record>, private val email
                 }
                 .setNegativeButton("No") { dialog, id ->
                     // Dismiss the dialog
+                    dialog.dismiss()
+                }
+            val alert = builder.create()
+            alert.show()
+        }
+
+
+        holder.deleteTxt.setOnClickListener(){
+            val builder = AlertDialog.Builder(holder.itemView.context)
+            builder.setMessage("Are you sure you want to Delete?")
+                .setCancelable(false)
+                .setPositiveButton("Yes") { dialog, id ->
+                    val db= Firebase.firestore
+
+                    db.collection("Exercises").document(email).collection(holder.typeTxt.text.toString()).document(holder.dateTxt.text.toString())
+                        .delete()
+
+
+                    Toast.makeText(
+                        holder.itemView.context, "Record has been successfully Deleted",
+                        Toast.LENGTH_SHORT
+                    ).show()
+
+
+                    notifyDataSetChanged()
+
+                }
+                .setNegativeButton("No") { dialog, id ->
                     dialog.dismiss()
                 }
             val alert = builder.create()

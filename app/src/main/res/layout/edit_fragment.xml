@@ -8,7 +8,7 @@ xmlns:tools="http://schemas.android.com/tools" >
     android:layout_height="match_parent"
     android:background="#040720"
     android:orientation="vertical"
-    tools:context=".EditExercise.EditFragment">
+    tools:context=".Exercise.EditExercise.EditFragment">
 
 
     <ScrollView

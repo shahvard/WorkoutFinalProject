@@ -9,7 +9,7 @@ xmlns:tools="http://schemas.android.com/tools" >
     android:layout_height="match_parent"
     android:background="#040720"
     android:orientation="vertical"
-    tools:context=".ViewExercise.ViewFragment">
+    tools:context=".Exercise.ViewExercise.ViewFragment">
 
 
     <ScrollView

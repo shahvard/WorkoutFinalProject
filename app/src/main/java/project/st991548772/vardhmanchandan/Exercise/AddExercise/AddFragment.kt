@@ -1,7 +1,6 @@
-package project.st991548772.vardhmanchandan.AddExercise
+package project.st991548772.vardhmanchandan.Exercise.AddExercise
 
 import android.content.ContentValues.TAG
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -14,7 +13,6 @@ import android.widget.CalendarView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -98,33 +96,35 @@ class AddFragment : Fragment() {
             val record = hashMapOf(
                 "Date" to date,
                 "TypeOfWorkout" to typeOfWorkout,
-                "duration" to duration,
-                "distance" to distance
+                "duration" to duration +" minutes",
+                "distance" to distance +" kms"
             )
 
-            db.collection("Exercises").document(email).collection(typeOfWorkout).document(date)
-                .set(record)
-                .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully written!")
-                    Navigation.findNavController(this.requireView())
-                        .navigate(R.id.action_addFragment_to_exerciseCRUDFragment)
+
 
                     val builder = AlertDialog.Builder(this.requireContext())
                     builder.setMessage("Are you sure you want to Add?")
                         .setCancelable(false)
                         .setPositiveButton("Yes") { dialog, id ->
-                            Toast.makeText(this.requireContext(),"Record has been successfully added",Toast.LENGTH_SHORT).show()
+
+                            db.collection("Exercises").document(email).collection(typeOfWorkout).document(date)
+                                .set(record)
+                                .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully written!")
+                                    Toast.makeText(this.requireContext(),"Record has been successfully added",Toast.LENGTH_SHORT).show()
+                           }
+                                .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e) }
+
+                            Navigation.findNavController(this.requireView())
+                                .navigate(R.id.action_addFragment_to_exerciseCRUDFragment)
 
                         }
                         .setNegativeButton("No") { dialog, id ->
-                            // Dismiss the dialog
+
                             dialog.dismiss()
                         }
                     val alert = builder.create()
                     alert.show()
 
-
-                }
-                .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e) }
 
 
 

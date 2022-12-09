@@ -35,4 +35,11 @@
 
     </string-array>
 
+    <string-array name="typeOfMeal">
+        <item> Breakfast</item>
+        <item>Lunch</item>
+        <item>Dinner</item>
+    </string-array>
+
+
 </resources>

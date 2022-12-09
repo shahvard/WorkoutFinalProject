@@ -30,14 +30,16 @@
             app:destination="@id/viewFragment" />
         <action
             android:id="@+id/action_exerciseCRUDFragment_to_addFragment"
-            app:destination="@id/addFragment" />
+            app:destination="@id/addFragment"
+            app:popUpTo="@id/exerciseCRUDFragment"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_exerciseCRUDFragment_to_editFragment"
             app:destination="@id/editFragment" />
     </fragment>
     <fragment
         android:id="@+id/addFragment"
-        android:name="project.st991548772.vardhmanchandan.AddExercise.AddFragment"
+        android:name="project.st991548772.vardhmanchandan.Exercise.AddExercise.AddFragment"
         android:label="add_fragment"
         tools:layout="@layout/add_fragment" >
         <action
@@ -46,18 +48,31 @@
     </fragment>
     <fragment
         android:id="@+id/viewFragment"
-        android:name="project.st991548772.vardhmanchandan.ViewExercise.ViewFragment"
+        android:name="project.st991548772.vardhmanchandan.Exercise.ViewExercise.ViewFragment"
         android:label="ViewFragment"
         tools:layout="@layout/view_fragment"
         />
     <fragment
         android:id="@+id/editFragment"
-        android:name="project.st991548772.vardhmanchandan.EditExercise.EditFragment"
+        android:name="project.st991548772.vardhmanchandan.Exercise.EditExercise.EditFragment"
         android:label="EditFragment"
         tools:layout="@layout/edit_fragment"/>
     <fragment
         android:id="@+id/dietFragment"
         android:name="project.st991548772.vardhmanchandan.Diet.DietFragment"
         android:label="fragment_diet"
-        tools:layout="@layout/fragment_diet" />
+        tools:layout="@layout/fragment_diet" >
+        <action
+            android:id="@+id/action_dietFragment_to_addDietFragment"
+            app:destination="@id/addDietFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addDietFragment"
+        android:name="project.st991548772.vardhmanchandan.Diet.AddDiet.AddDietFragment"
+        android:label="fragment_add_diet"
+        tools:layout="@layout/fragment_add_diet" >
+        <action
+            android:id="@+id/action_addDietFragment_to_dietFragment"
+            app:destination="@id/dietFragment" />
+    </fragment>
 </navigation>

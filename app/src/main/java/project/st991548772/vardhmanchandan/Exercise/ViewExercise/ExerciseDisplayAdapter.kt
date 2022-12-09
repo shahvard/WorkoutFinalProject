@@ -1,14 +1,11 @@
-package project.st991548772.vardhmanchandan.ViewExercise
+package project.st991548772.vardhmanchandan.Exercise.ViewExercise
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.lifecycle.MutableLiveData
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import org.w3c.dom.Text
 import project.st991548772.vardhmanchandan.R
 
 class ExerciseDisplayAdapter(private val list:ArrayList<Record>):RecyclerView.Adapter<ExerciseDisplayAdapter.MyViewHolder>() {

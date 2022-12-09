@@ -1,4 +1,4 @@
-package project.st991548772.vardhmanchandan.EditExercise
+package project.st991548772.vardhmanchandan.Exercise.EditExercise
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -16,8 +16,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import project.st991548772.vardhmanchandan.R
-import project.st991548772.vardhmanchandan.ViewExercise.Record
-import project.st991548772.vardhmanchandan.ViewExercise.ViewViewModel
+import project.st991548772.vardhmanchandan.Exercise.ViewExercise.Record
+import project.st991548772.vardhmanchandan.Exercise.ViewExercise.ViewViewModel
 import project.st991548772.vardhmanchandan.databinding.EditFragmentBinding
 import java.util.*
 
@@ -38,6 +38,8 @@ class EditFragment : Fragment() {
     private lateinit var email: String
     private lateinit var rView: RecyclerView
     private lateinit var auth: FirebaseAuth
+    var month = 0
+    var year = 0
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -50,15 +52,14 @@ class EditFragment : Fragment() {
 
         email = auth.currentUser?.email.toString()
 
-        var month = 0
-        var year = 0
+
 
         val c = Calendar.getInstance()
 
         year = c.get(Calendar.YEAR)
         month = c.get(Calendar.MONTH) + 1
 
-        viewModel.getFromDatabase(month, year, email)
+        getFromViewModel()
         var months:Array<String> =resources.getStringArray(R.array.months_of_year)
 
         val monthAdapter = ArrayAdapter<String>(
@@ -89,8 +90,8 @@ class EditFragment : Fragment() {
                     "November" -> month = 11
                     "December" -> month = 12
                 }
+                getFromViewModel()
 
-                viewModel.getFromDatabase(month, year, email)
 
             }
 
@@ -134,6 +135,10 @@ class EditFragment : Fragment() {
         return inflater.inflate(R.layout.edit_fragment, container, false)
 
 
+    }
+
+    fun getFromViewModel(){
+        viewModel.getFromDatabase(month,year,email)
     }
 
     fun display(it: ArrayList<Record>) {

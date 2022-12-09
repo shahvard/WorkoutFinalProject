@@ -1,14 +1,11 @@
-package project.st991548772.vardhmanchandan.ViewExercise
+package project.st991548772.vardhmanchandan.Exercise.ViewExercise
 
 import android.content.ContentValues.TAG
-import android.icu.text.AlphabeticIndex
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class ViewViewModel : ViewModel() {
 

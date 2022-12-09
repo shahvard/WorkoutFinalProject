@@ -1,8 +1,7 @@
-package project.st991548772.vardhmanchandan.ViewExercise
+package project.st991548772.vardhmanchandan.Exercise.ViewExercise
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,19 +10,13 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import project.st991548772.vardhmanchandan.R
 import project.st991548772.vardhmanchandan.databinding.ViewFragmentBinding
-import java.time.LocalTime
 import java.util.*
 
 class ViewFragment : Fragment() {
