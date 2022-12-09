@@ -14,7 +14,7 @@ class ViewViewModel : ViewModel() {
     val list:MutableLiveData<ArrayList<Record>> = MutableLiveData()
 
 
-    fun getFromDatabase(month:Int,year:Int,email:String){
+    fun getFromDatabase(date:String,email:String){
 
         val db = Firebase.firestore
         val type=arrayOf("Swimming","Cycling","Running")
@@ -25,8 +25,8 @@ class ViewViewModel : ViewModel() {
         val docRef = db.collection("Exercises").document(email).collection(a).get()
             .addOnSuccessListener { result ->
                 for (document in result) {
-                    var monthFromDatabase=Integer.parseInt(document.id.split("-").get(1))
-                    if(monthFromDatabase==month){
+
+                    if(document.id==date){
                         Log.d(TAG, "${document.id} => ${document.data}")
 
                         ar.add(Record(document.data.get("Date").toString(),document.data.get("TypeOfWorkout").toString(),document.data.get("distance").toString(),document.data.get("duration").toString()))
@@ -46,6 +46,6 @@ class ViewViewModel : ViewModel() {
 
 }
 
-data class Record(val Date:String,val TypeOfWorkout:String, val distance:String, val duration:String) {
+data class Record(var Date:String,var TypeOfWorkout:String, var distance:String, var duration:String) {
 
 }

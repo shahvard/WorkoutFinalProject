@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    >
+<RelativeLayout
+   android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Exercise.ExerciseCRUDFragment"
     android:background="#040720"
@@ -17,25 +17,17 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="25dp">
-
-
-    <TextView
-        android:layout_marginTop="50dp"
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Click on the below buttons to add, edit or delete workout"
-        android:textColor="#ffffff"
-        />
+        android:orientation="vertical"
+        android:padding="10dp">
+
 
         <Button
             android:id="@+id/add"
-            android:layout_width="210dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="16dp"
             android:backgroundTint="#ffcc00"
             android:fontFamily="sans-serif"
@@ -45,38 +37,36 @@
             android:textSize="30sp"
             android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/edit"
-        android:layout_width="210dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="#ffcc00"
-        android:fontFamily="sans-serif"
-        android:text="Edit or Delete Workout"
-        android:textAllCaps="false"
-        android:textColor="#ffffff"
-        android:textSize="30sp"
-        android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/view"
-            android:layout_width="210dp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="16dp"
-            android:backgroundTint="#ffcc00"
-            android:fontFamily="sans-serif"
-            android:text="View All Workouts"
-            android:textAllCaps="false"
-            android:textColor="#ffffff"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="10dp"
+            android:textColorHint="#000000">
+
+            <EditText
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:hint="Select Date"
+                android:text=""
+                android:inputType="textEmailAddress"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 </ScrollView>
 </RelativeLayout>
+
+</layout>
 
 

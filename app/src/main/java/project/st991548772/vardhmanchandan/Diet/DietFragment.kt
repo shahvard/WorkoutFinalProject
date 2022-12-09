@@ -56,12 +56,6 @@ class DietFragment : Fragment() {
 
         edt = binding.date
 
-        val cal = Calendar.getInstance()
-
-
-        var day :Int
-        var month:Int = cal.get(Calendar.MONTH)-1
-        var year :Int = cal.get(Calendar.YEAR)
         edt.setOnClickListener {
             val c = Calendar.getInstance()
 

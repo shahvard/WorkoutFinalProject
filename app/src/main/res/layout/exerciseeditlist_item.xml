@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="30dp" >
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,68 +25,110 @@
             tools:layout_editor_absoluteY="50dp" />
 
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_toRightOf="@+id/imageView"
             android:padding="24dp">
 
-
-            <EditText
-                android:id="@+id/date"
+            <TextView
+                android:id="@+id/dateTxtView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:text="7-5-2020"
-                android:textSize="25sp" />
-
+                android:textSize="20sp" />
             <EditText
-                android:id="@+id/type"
+                android:id="@+id/dateEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
+                android:text="7-5-2020"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/typeOfWorkoutTxtView"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/dateTxtView"
                 android:text="Running"
-                android:textSize="25sp" />
+                android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/distance"
+                android:id="@+id/typeOfWorkoutEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
+                android:layout_below="@+id/dateEditText"
+                android:text="Running"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/distanceTxtView"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/typeOfWorkoutTxtView"
                 android:text="2km"
-                android:textSize="25sp" />
+                android:textSize="20sp" />
+            <EditText
+                android:id="@+id/distanceEditText"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/typeOfWorkoutEditText"
+                android:text="2km"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/durationTxtView"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/distanceTxtView"
+                android:text="5 minutes"
+                android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/duration"
+                android:id="@+id/durationEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
+                android:layout_below="@+id/distanceEditText"
                 android:text="5 minutes"
-                android:textSize="25sp" />
+                android:textSize="15sp" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/container1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/durationEditText"
                 android:background="#ffcc00"
                 android:orientation="horizontal"
                 >
             <TextView
                 android:id="@+id/confirmEdit"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Edit"
                 android:textSize="25sp"
                 android:layout_marginTop="10dp"
 
                 />
+                <TextView
+                    android:id="@+id/confirmEditOk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Confirm Edit"
+                    android:textSize="25sp"
+
+                    />
             <TextView
                 android:id="@+id/confirmDelete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Delete"
+                android:layout_toRightOf="@+id/confirmEdit"
                 android:textSize="25sp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="60dp"
 
                 />
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
 </RelativeLayout>

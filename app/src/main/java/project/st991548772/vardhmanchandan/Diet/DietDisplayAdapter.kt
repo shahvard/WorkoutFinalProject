@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import project.st991548772.vardhmanchandan.Exercise.ViewExercise.ExerciseDisplayAdapter
+
 import project.st991548772.vardhmanchandan.R
 import java.util.ArrayList
 
