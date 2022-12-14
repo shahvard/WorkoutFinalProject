@@ -48,8 +48,8 @@ private lateinit var binding:FragmentExerciseCRUDBinding
         email = auth.currentUser?.email.toString()
 
         edt = binding.date
-        view.findViewById<Button>(R.id.add).setOnClickListener(){
-            Navigation.findNavController(this.requireActivity(),R.id.add)
+        binding.add.setOnClickListener(){
+            Navigation.findNavController(this.requireView())
                 .navigate(R.id.action_exerciseCRUDFragment_to_addFragment)
         }
 

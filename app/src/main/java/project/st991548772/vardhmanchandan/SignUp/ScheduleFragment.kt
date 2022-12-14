@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.google.firebase.firestore.SetOptions
@@ -156,7 +157,7 @@ class ScheduleFragment : Fragment() {
             val schedule = hashMapOf(
                 "startTime" to startTime,
                 "endTime" to endTime,
-                "distance" to distance,
+                "distance" to distance +" kms",
                 "typeOfWorkout" to typeOfWorkout
             )
 
@@ -180,8 +181,11 @@ class ScheduleFragment : Fragment() {
         }
 
         binding.submit.setOnClickListener(){
+            var bundle:Bundle= bundleOf()
+            bundle.putString("email",email)
+
             view.findNavController()
-                .navigate(R.id.action_scheduleFragment_to_loginFragment)
+                .navigate(R.id.action_scheduleFragment_to_caloriesFragment,bundle)
         }
         return view
     }

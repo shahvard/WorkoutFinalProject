@@ -10,6 +10,8 @@
         android:orientation="vertical"
         tools:context=".SignUp.ScheduleFragment">
 
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -140,7 +142,9 @@
                 android:id="@+id/typeOfExercise"
                 android:layout_marginTop="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinner_bg"
+                style="@style/spinnerItemStyle"/>
 
             <LinearLayout android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -169,7 +173,7 @@
                 android:layout_width="210dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="44dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="16dp"
                 android:backgroundTint="#ffcc00"
                 android:fontFamily="sans-serif"
@@ -197,7 +201,7 @@
         </LinearLayout>
 
 
-
+</ScrollView>
 
     </RelativeLayout>
 </layout>

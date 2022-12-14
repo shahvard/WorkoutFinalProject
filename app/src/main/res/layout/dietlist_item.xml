@@ -18,7 +18,7 @@ android:layout_marginTop="30dp" >
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="100dp"
+            android:layout_width="50dp"
             android:layout_height="100dp"
             android:layout_marginTop="30dp"
             app:srcCompat="@drawable/ic_baseline_directions_run_24"
@@ -36,14 +36,14 @@ android:layout_marginTop="30dp" >
 
             <TextView
                 android:id="@+id/dateTxtView"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="45dp"
                 android:text="7-5-2020"
                 android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/dateEditText"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="45dp"
                 android:text="7-5-2020"
                 android:textSize="15sp" />
@@ -51,24 +51,32 @@ android:layout_marginTop="30dp" >
 
             <TextView
                 android:id="@+id/typeTxtView"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="45dp"
-                android:layout_below="@+id/dateTxtView"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="20dp"
+
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toRightOf="@+id/dateTxtView"
                 android:text="Running"
                 android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/typeEditText"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="45dp"
-                android:layout_below="@+id/dateEditText"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/dateEditText"
+
                 android:text="Running"
                 android:textSize="15sp" />
 
 
             <TextView
                 android:id="@+id/itemTxtView"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="45dp"
                 android:layout_below="@+id/typeTxtView"
                 android:text="2km"
@@ -76,29 +84,31 @@ android:layout_marginTop="30dp" >
 
             <EditText
                 android:id="@+id/itemEditText"
-                android:layout_width="match_parent"
-
+                android:layout_width="wrap_content"
                 android:layout_height="45dp"
                 android:layout_below="@+id/typeEditText"
-
                 android:text="2km"
                 android:textSize="15sp" />
 
 
             <TextView
                 android:id="@+id/caloriesTxtView"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="45dp"
-                android:layout_below="@+id/itemTxtView"
+                android:layout_toRightOf="@+id/itemTxtView"
+                android:layout_below="@+id/typeEditText"
+                android:layout_marginLeft="20dp"
                 android:text="5 minutes"
                 android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/caloriesEditText"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="45dp"
-                android:layout_below="@+id/itemEditText"
                 android:text="5 minutes"
+                android:layout_toRightOf="@+id/itemTxtView"
+                android:layout_below="@+id/typeEditText"
+                android:layout_marginLeft="20dp"
                 android:textSize="15sp" />
 
             <RelativeLayout
@@ -111,33 +121,33 @@ android:layout_marginTop="30dp" >
 
                 <TextView
                     android:id="@+id/confirmEdit"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="Edit"
                     android:textSize="25sp"
+                    android:textStyle="bold"
 
                     />
 
                 <TextView
                     android:id="@+id/confirmEditOk"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="Confirm Edit"
                     android:textSize="25sp"
-
-                    />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/confirmDelete"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="60dp"
                     android:layout_marginTop="10dp"
                     android:text="Delete"
                     android:textSize="25sp"
-
+                    android:textStyle="bold"
                     />
             </RelativeLayout>
         </RelativeLayout>

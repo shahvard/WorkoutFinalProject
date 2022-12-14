@@ -16,7 +16,7 @@ import com.google.firebase.ktx.Firebase
 import project.st991548772.vardhmanchandan.R
 import java.util.ArrayList
 
-class DietDisplayAdapter(private val list: ArrayList<DietRecord>,private val email:String):
+class DietDisplayAdapter(private val list: ArrayList<DietViewModel.DietRecord>, private val email:String):
     RecyclerView.Adapter<DietDisplayAdapter.MyViewHolder>() {
 
 
@@ -58,10 +58,12 @@ class DietDisplayAdapter(private val list: ArrayList<DietRecord>,private val ema
         holder.confirmEdit.visibility=View.INVISIBLE
         var currentItem = list.get(position)
         when (currentItem?.TypeOfDiet) {
-            "Breakfast" -> holder.imageView.setImageResource(R.drawable.ic_baseline_directions_run_24)
-            "Lunch" -> holder.imageView.setImageResource(R.drawable.ic_baseline_directions_bike_24)
-            "Dinner" -> holder.imageView.setImageResource(R.drawable.swimming)
+            "Breakfast" -> holder.imageView.setImageResource(R.drawable.breakfast)
+            "Lunch" -> holder.imageView.setImageResource(R.drawable.lunch)
+            "Dinner" -> holder.imageView.setImageResource(R.drawable.dinner)
         }
+
+
         holder.dateTxtView.text = currentItem.Date
         holder.typeTxtView.text = currentItem.TypeOfDiet
         holder.itemTxtView.text = currentItem.ItemName

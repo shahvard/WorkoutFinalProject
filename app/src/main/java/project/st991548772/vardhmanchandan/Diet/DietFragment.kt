@@ -53,6 +53,16 @@ class DietFragment : Fragment() {
         rView = binding.list
 
         email = auth.currentUser?.email.toString()
+        val c = Calendar.getInstance()
+
+        // on below line we are getting
+        // our day, month and year.
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
+        val dat = (day.toString() + "-" + (month + 1) + "-" + year)
+
+        viewModel.getFromDatabase(dat,email)
 
         edt = binding.date
 
@@ -95,13 +105,37 @@ class DietFragment : Fragment() {
 
         viewModel.dietList.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
             display(it)
+
         })
+
+        viewModel.totalCalories.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            displayCalories()
+
+        })
+
+        viewModel.todaysCalories.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            displayCalories()
+
+        })
+
+
+
+
 
         return inflater.inflate(R.layout.fragment_diet, container, false)
 
 
     }
-    fun display(it: ArrayList<DietRecord>) {
+
+    private fun displayCalories() {
+
+        var totalCalories=viewModel.totalCalories.value
+        binding.caloriesTextView.text="Today's Calories: ${viewModel.todaysCalories.value}/$totalCalories"
+
+
+    }
+
+    fun display(it: ArrayList<DietViewModel.DietRecord>) {
 
         rView.adapter = DietDisplayAdapter(it,email)
         rView.layoutManager = LinearLayoutManager(this.requireContext())
