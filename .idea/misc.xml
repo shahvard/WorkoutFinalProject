@@ -10,6 +10,7 @@
         <entry key="app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.156" />
         <entry key="app/src/main/res/drawable/spinner_bg.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/spinnerbg.xml" value="0.118" />
+        <entry key="app/src/main/res/layout/activity_bottom.xml" value="0.34479166666666666" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.30238095238095236" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/activity_navigation.xml" value="0.20199275362318841" />

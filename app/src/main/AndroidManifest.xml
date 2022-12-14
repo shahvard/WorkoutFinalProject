@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WorkoutFinalProject">
-
+        <activity
+            android:name=".Home.BottomActivity"
+            android:exported="false"
+            android:label="@string/title_activity_bottom" />
         <activity
             android:name=".Home.HomeActivity"
             android:exported="false" />

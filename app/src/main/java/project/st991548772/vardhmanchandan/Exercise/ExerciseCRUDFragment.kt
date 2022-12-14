@@ -11,6 +11,9 @@ import android.widget.EditText
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
@@ -44,6 +47,7 @@ private lateinit var binding:FragmentExerciseCRUDBinding
         binding = DataBindingUtil.setContentView(this.requireActivity(), R.layout.fragment_exercise_c_r_u_d)
         auth = Firebase.auth
         rView = binding.list
+
 
         email = auth.currentUser?.email.toString()
 

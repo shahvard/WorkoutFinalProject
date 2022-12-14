@@ -3,19 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/afterloginnavigation"
-    app:startDestination="@id/homeFragment2">
+    app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/homeFragment2"
+        android:id="@+id/homeFragment"
         android:name="project.st991548772.vardhmanchandan.Home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment2_to_exerciseCRUDFragment"
-            app:destination="@id/exerciseCRUDFragment" />
-        <action
-            android:id="@+id/action_homeFragment2_self"
-            app:destination="@id/homeFragment2" />
+            app:destination="@id/exerciseCRUDFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_homeFragment2_to_dietFragment"
             app:destination="@id/dietFragment" />
@@ -26,16 +25,10 @@
         android:label="ExerciseCRUDFragment"
         tools:layout="@layout/fragment_exercise_c_r_u_d">
         <action
-            android:id="@+id/action_exerciseCRUDFragment_to_viewFragment"
-            app:destination="@id/viewFragment" />
-        <action
             android:id="@+id/action_exerciseCRUDFragment_to_addFragment"
             app:destination="@id/addFragment"
             app:popUpTo="@id/exerciseCRUDFragment"
             app:popUpToInclusive="false" />
-        <action
-            android:id="@+id/action_exerciseCRUDFragment_to_editFragment"
-            app:destination="@id/editFragment" />
     </fragment>
     <fragment
         android:id="@+id/addFragment"
@@ -46,17 +39,6 @@
             android:id="@+id/action_addFragment_to_exerciseCRUDFragment"
             app:destination="@id/exerciseCRUDFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/viewFragment"
-        android:name="project.st991548772.vardhmanchandan.Exercise.ViewExercise.ViewFragment"
-        android:label="ViewFragment"
-        tools:layout="@layout/view_fragment"
-        />
-    <fragment
-        android:id="@+id/editFragment"
-        android:name="project.st991548772.vardhmanchandan.Exercise.EditExercise.EditFragment"
-        android:label="EditFragment"
-        tools:layout="@layout/edit_fragment"/>
     <fragment
         android:id="@+id/dietFragment"
         android:name="project.st991548772.vardhmanchandan.Diet.DietFragment"
