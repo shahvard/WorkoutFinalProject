@@ -75,17 +75,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
-                <TextView
-                    android:id="@+id/goHome"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TextView"
-                    android:textColor="#ffffff"
-                    app:layout_constraintStart_toStartOf="@+id/bottomNav" />
 
             </LinearLayout>
 
-            </ScrollView>
+        </ScrollView>
 
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -98,7 +91,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:menu="@menu/dietmenu"
+            app:menu="@menu/bottom_nav_menu"
             android:scrollIndicators="left">
 
 
