@@ -20,7 +20,7 @@ class HomeViewModel: ViewModel() {
     val totalCalories: MutableLiveData<Int> = MutableLiveData(0)
     val todaysCalories: MutableLiveData<Int> = MutableLiveData(0)
 
-
+        //function to get the personal info from the database
     fun getUserPersonalInfo(email:String){
         val db=Firebase.firestore
         val docRef = db.collection("users").document(email).get()
@@ -36,6 +36,7 @@ class HomeViewModel: ViewModel() {
             }
     }
 
+    //getting todays schedule from the database
     fun getSchedule(day:String,email: String){
         val db=Firebase.firestore
         val docRef = db.collection("Schedule").document(email).collection("dayList").document(day).get()
@@ -47,6 +48,7 @@ class HomeViewModel: ViewModel() {
             }
         }
 
+    //getting number of exercises done this month from database
     fun getExercisesThisMonth(month: String, email: String) {
 
         val db = Firebase.firestore
@@ -75,6 +77,7 @@ class HomeViewModel: ViewModel() {
 
     }
 
+    //getting calories consuumed today and total calories for the day from the database
     fun getCalories(email:String){
         val db = Firebase.firestore
 
@@ -112,12 +115,6 @@ class HomeViewModel: ViewModel() {
                 }
         }
 
-
-
-
-
-
-
         db.collection("Calories").document(email).get()
             .addOnSuccessListener { result ->
                 totalCalories.value = Integer.parseInt(result.data?.get("Calories").toString())
@@ -131,6 +128,7 @@ class HomeViewModel: ViewModel() {
 }
 
 
+//data class for schedule 
 data class Schedule(var startTime:String,var endTime:String,var distance:String,var typeOfWorkout:String) {
 
 }

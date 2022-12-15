@@ -18,7 +18,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import project.st991548772.vardhmanchandan.R
 import project.st991548772.vardhmanchandan.databinding.FragmentAddDietBinding
-import project.st991548772.vardhmanchandan.databinding.FragmentDietBinding
+
 
 
 class AddDietFragment : Fragment() {
@@ -43,6 +43,7 @@ class AddDietFragment : Fragment() {
         auth=Firebase.auth
         email=auth.currentUser?.email.toString()
 
+        //getting information regarding the diet from user
         var typeOfMealArray=resources.getStringArray(R.array.typeOfMeal)
         val arrayAdapter: ArrayAdapter<String> =
             ArrayAdapter<String>(this.requireContext(), android.R.layout.simple_spinner_item, typeOfMealArray)
@@ -62,6 +63,7 @@ class AddDietFragment : Fragment() {
             }
         }
 
+        //taking date from the user
         calendar
             .setOnDateChangeListener(
                 CalendarView.OnDateChangeListener { view, year, month, dayOfMonth ->
@@ -72,6 +74,9 @@ class AddDietFragment : Fragment() {
 
                 })
 
+
+
+        //When the user click on add button this is executed and this adds the record to the firebase database
         binding.add.setOnClickListener(){
             val dietRecord= hashMapOf(
                     "Date" to date,
@@ -81,6 +86,7 @@ class AddDietFragment : Fragment() {
 
             )
 
+            //Using Alert dialog box to ask the user to confirm
             val builder = AlertDialog.Builder(this.requireContext())
             builder.setMessage("Are you sure you want to Add?")
                 .setCancelable(false)
@@ -92,7 +98,7 @@ class AddDietFragment : Fragment() {
                             Toast.makeText(this.requireContext(),"Record has been successfully added",
                                 Toast.LENGTH_SHORT).show()
                             Navigation.findNavController(this.requireView())
-                                .navigate(R.id.action_addDietFragment_to_dietFragment)
+                                .navigate(R.id.action_addDietFragment_to_dietFragment2)
                         }
                         .addOnFailureListener { e -> Log.w(ContentValues.TAG, "Error writing document", e) }
 

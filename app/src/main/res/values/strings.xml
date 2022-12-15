@@ -46,4 +46,6 @@
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
     <string name="title_activity_bottom">BottomActivity</string>
+    <string name="hyperlink"> <a href="https://darebee.com/workouts/explorer-workout.html">Explore New Exercises</a></string>
+    <string name="dietHyperlink"><a href="https://www.dietdoctor.com/low-carb/recipes/healthy-dinner-ideas">Explore Diet Food</a></string>
 </resources>

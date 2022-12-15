@@ -12,9 +12,11 @@ import com.google.firebase.ktx.Firebase
 import project.st991548772.vardhmanchandan.R
 import project.st991548772.vardhmanchandan.Exercise.ViewExercise.Record
 
+//this is the recycler view adapter
 class ExerciseEditAdapter(private val list: ArrayList<Record>, private val email:String):
     RecyclerView.Adapter<ExerciseEditAdapter.MyViewHolder>() {
 
+    //getting all the textviews buttons and edittext from the ui
     class MyViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         val imageView: ImageView =itemView.findViewById(R.id.imageView)
         val dateEditText: EditText =itemView.findViewById(R.id.dateEditText)
@@ -42,6 +44,8 @@ class ExerciseEditAdapter(private val list: ArrayList<Record>, private val email
         return MyViewHolder(itemView)
     }
 
+    //setting all the values in the fields
+    //and performing the edit and delete function and updating the database
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
         holder.dateEditText.visibility=View.INVISIBLE

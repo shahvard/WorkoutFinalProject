@@ -60,10 +60,8 @@ private lateinit var binding:FragmentExerciseCRUDBinding
         }
 
         val c = Calendar.getInstance()
-
         val year = c.get(Calendar.YEAR)
         val month = c.get(Calendar.MONTH)
-
         val day = c.get(Calendar.DAY_OF_MONTH)
         val dat = (day.toString() + "-" + (month + 1) + "-" + year)
 
@@ -73,9 +71,10 @@ private lateinit var binding:FragmentExerciseCRUDBinding
         val appCompat = requireActivity() as AppCompatActivity
         val navHostFragment = appCompat.supportFragmentManager.findFragmentById(R.id.studentNavHost) as NavHostFragment
         val navController = navHostFragment.findNavController()
-
         binding.bottomNav.setupWithNavController(navController)
 
+        //when clicked on edittext this is executed
+        //whe clicked it opens a popup calendar
         edt.setOnClickListener {
             val c = Calendar.getInstance()
 
@@ -105,6 +104,7 @@ private lateinit var binding:FragmentExerciseCRUDBinding
             datePickerDialog.show()
         }
 
+        //observer for viewmodel list
         viewModel.list.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
             display(it)
         })

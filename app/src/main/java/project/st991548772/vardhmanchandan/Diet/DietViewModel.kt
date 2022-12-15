@@ -9,15 +9,17 @@ import com.google.firebase.ktx.Firebase
 import java.util.*
 import kotlin.collections.ArrayList
 
+
+//this is the viewmodel for dietFragment
 class DietViewModel : ViewModel() {
 
-    val dietList: MutableLiveData<ArrayList<DietRecord>> = MutableLiveData()
 
+    val dietList: MutableLiveData<ArrayList<DietRecord>> = MutableLiveData()
     var todaysCalories: MutableLiveData<Int> =MutableLiveData(0)
     var totalCalories: MutableLiveData<Int> =MutableLiveData()
 
 
-
+    //this method retrieves calories intake for the date and the the list of the diet records
     fun getFromDatabase(date: String, email: String) {
 
         val db = Firebase.firestore
@@ -31,10 +33,10 @@ class DietViewModel : ViewModel() {
         val todaydate = "$day-$month-$year"
 
         todaysCalories.value=0
+
+        //taking a snapshot of the database
         for (a in type) {
-
-
-             db.collection("Diet").document(email).collection(a).get()
+            db.collection("Diet").document(email).collection(a).get()
                 .addOnSuccessListener { result ->
                     for (document in result) {
                         if (document.id == date) {
@@ -63,6 +65,7 @@ class DietViewModel : ViewModel() {
 
                     }
 
+                    //Accessing the calories from the database
                     db.collection("Calories").document(email).get()
                         .addOnSuccessListener { result ->
                             totalCalories.value = Integer.parseInt(result.data?.get("Calories").toString())
@@ -79,7 +82,7 @@ class DietViewModel : ViewModel() {
 
 
 
-
+//it is a dataclass for DietRecord
     data class DietRecord(
         var Date: String,
         var TypeOfDiet: String,

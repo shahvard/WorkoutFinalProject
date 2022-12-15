@@ -11,6 +11,8 @@ import androidx.navigation.findNavController
 import project.st991548772.vardhmanchandan.databinding.FragmentMainBinding
 
 
+
+//this is the main fragment which is the landing page for the app
 class MainFragment : Fragment() {
 
     private lateinit var binding: FragmentMainBinding
@@ -20,29 +22,17 @@ class MainFragment : Fragment() {
     ): View? {
         val view=inflater.inflate(R.layout.fragment_main, container, false)
         binding = DataBindingUtil.setContentView(this.requireActivity(), R.layout.fragment_main)
+
         view.findViewById<Button>(R.id.signup).setOnClickListener(){
             view.findNavController()
                 .navigate(R.id.action_mainFragment_to_signUpFragment)
 
 
         }
-       /* binding.signup.setOnClickListener(){
-            view.findNavController()
-                .navigate(R.id.action_mainFragment_to_signUpFragment)
 
-
-        }*/
-
-       /* binding.login.setOnClickListener(){
+        view.findViewById<Button>(R.id.login).setOnClickListener() {
             view.findNavController()
                 .navigate(R.id.action_mainFragment_to_loginFragment)
-        }*/
-
-        view.findViewById<Button>(R.id.login).setOnClickListener(){
-            view.findNavController()
-                .navigate(R.id.action_mainFragment_to_loginFragment)
-
-
         }
 
         return view

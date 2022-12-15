@@ -26,14 +26,12 @@ class AddFragment : Fragment() {
 
 
 
-
+    //all the lateinit variables to be used
     private lateinit var binding: AddFragmentBinding
-    private lateinit var typeOfWorkoutSelected:String
     private lateinit var duration:String
     private lateinit var distance:String
     private lateinit var calendar: CalendarView
     private lateinit var date:String
-
     private lateinit var auth: FirebaseAuth
     private lateinit var email:String
 
@@ -41,17 +39,18 @@ class AddFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        //assigning values to all the lateinit variables
         binding= DataBindingUtil.setContentView(this.requireActivity(), R.layout.add_fragment)
         calendar=binding.calendarView
         auth=Firebase.auth
         val currentUser = auth.currentUser
         email= currentUser?.email.toString()
-        //adding values to spinner
+
+        //adding values to arrar for spinner and assigning the spinner a adapter
         val typeOfWorkoutList: ArrayList<String> = ArrayList()
         typeOfWorkoutList.add("Cycling")
         typeOfWorkoutList.add("Running")
         typeOfWorkoutList.add("Swimming")
-
 
         var typeOfWorkout:String="None"
         val arrayAdapter: ArrayAdapter<String> =
@@ -72,6 +71,7 @@ class AddFragment : Fragment() {
             }
         }
 
+        //getting the selected date
         calendar
             .setOnDateChangeListener(
                 CalendarView.OnDateChangeListener { view, year, month, dayOfMonth ->
@@ -85,23 +85,20 @@ class AddFragment : Fragment() {
 
 
 
-
+        //when the user clicks on add button this is called and this adds the data to the database
         binding.add.setOnClickListener(){
 
             duration=binding.duration.text.toString()
             distance=binding.distance.text.toString()
 
             val db = Firebase.firestore
-
             val record = hashMapOf(
                 "Date" to date,
                 "TypeOfWorkout" to typeOfWorkout,
                 "duration" to duration +" minutes",
                 "distance" to distance +" kms"
             )
-
-
-
+            //Alert dialog box for the user to confirm
                     val builder = AlertDialog.Builder(this.requireContext())
                     builder.setMessage("Are you sure you want to Add?")
                         .setCancelable(false)

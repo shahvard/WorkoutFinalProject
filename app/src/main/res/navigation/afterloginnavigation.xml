@@ -15,9 +15,6 @@
             app:destination="@id/exerciseCRUDFragment"
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_homeFragment2_to_dietFragment"
-            app:destination="@id/dietFragment" />
     </fragment>
     <fragment
         android:id="@+id/exerciseCRUDFragment"
@@ -43,24 +40,26 @@
             app:destination="@id/exerciseCRUDFragment" />
     </fragment>
     <fragment
-        android:id="@+id/dietFragment"
-        android:name="project.st991548772.vardhmanchandan.Diet.DietFragment"
-        android:label="fragment_diet"
-        tools:layout="@layout/fragment_diet" >
-        <action
-            android:id="@+id/action_dietFragment_to_addDietFragment"
-            app:destination="@id/addDietFragment" />
-        <action
-            android:id="@+id/action_dietFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/addDietFragment"
         android:name="project.st991548772.vardhmanchandan.Diet.AddDiet.AddDietFragment"
         android:label="fragment_add_diet"
         tools:layout="@layout/fragment_add_diet" >
         <action
-            android:id="@+id/action_addDietFragment_to_dietFragment"
-            app:destination="@id/dietFragment" />
+            android:id="@+id/action_addDietFragment_to_dietFragment2"
+            app:destination="@id/dietFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/exploreFragment"
+        android:name="project.st991548772.vardhmanchandan.Explore.ExploreFragment"
+        android:label="fragment_explore"
+        tools:layout="@layout/fragment_explore" />
+    <fragment
+        android:id="@+id/dietFragment2"
+        android:name="project.st991548772.vardhmanchandan.Diet.DietFragment"
+        android:label="DietFragment"
+        tools:layout="@layout/fragment_diet2" >
+        <action
+            android:id="@+id/action_dietFragment2_to_addDietFragment"
+            app:destination="@id/addDietFragment" />
     </fragment>
 </navigation>

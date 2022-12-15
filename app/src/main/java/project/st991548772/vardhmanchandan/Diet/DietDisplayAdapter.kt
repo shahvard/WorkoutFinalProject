@@ -16,6 +16,8 @@ import com.google.firebase.ktx.Firebase
 import project.st991548772.vardhmanchandan.R
 import java.util.ArrayList
 
+
+//this class is a recycler view adapter
 class DietDisplayAdapter(private val list: ArrayList<DietViewModel.DietRecord>, private val email:String):
     RecyclerView.Adapter<DietDisplayAdapter.MyViewHolder>() {
 
@@ -50,6 +52,9 @@ class DietDisplayAdapter(private val list: ArrayList<DietViewModel.DietRecord>, 
     override fun getItemCount(): Int = list.size
 
 
+    //in this method it displays all the data in the recycler view
+    //and when the edit and delete button the textViews are hidden and edit text is changed to visible
+    //and this method also performs edit and delete of records to database
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.dateEditText.visibility=View.INVISIBLE
         holder.typeEditText.visibility=View.INVISIBLE
@@ -112,6 +117,7 @@ class DietDisplayAdapter(private val list: ArrayList<DietViewModel.DietRecord>, 
             builder.setMessage("Are you sure you want to Edit?")
                 .setCancelable(false)
                 .setPositiveButton("Yes") { dialog, id ->
+                    //editing the record in database
                     val db= Firebase.firestore
 
 
@@ -134,6 +140,7 @@ class DietDisplayAdapter(private val list: ArrayList<DietViewModel.DietRecord>, 
                     holder.itemTxtView.text = currentItem.ItemName
                     holder.caloriesTxtView.text = currentItem.Calories
 
+                    //hiding the textviews
                     holder.dateTxtView.visibility=View.VISIBLE
                     holder.typeTxtView.visibility=View.VISIBLE
                     holder.itemTxtView.visibility=View.VISIBLE

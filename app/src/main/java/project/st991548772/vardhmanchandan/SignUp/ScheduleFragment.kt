@@ -22,6 +22,9 @@ import java.util.ArrayList
 
 
 class ScheduleFragment : Fragment() {
+
+   //In this class we take the schedule the user wants to follow throught the week
+    //and setting the value to the database
     val db = Firebase.firestore
 
     private lateinit var binding: FragmentScheduleBinding

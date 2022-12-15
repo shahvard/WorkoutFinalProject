@@ -20,12 +20,15 @@ class CaloriesFragment : Fragment() {
 
     private lateinit var binding: FragmentCaloriesBinding
     val db = Firebase.firestore
+    //getting the user decided number of calories intake per day
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.setContentView(this.requireActivity(), R.layout.fragment_calories)
         val email =arguments?.getString("email").toString()
+
+        //when the confirm button is clicked takes the value from the edittext and saves it in the database
         binding.confirm.setOnClickListener() {
             val calories = hashMapOf(
                 "Calories" to binding.calories.text.toString()

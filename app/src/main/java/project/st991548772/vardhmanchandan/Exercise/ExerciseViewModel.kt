@@ -10,7 +10,7 @@ import com.google.firebase.ktx.Firebase
 class ViewViewModel : ViewModel() {
 
 
-
+//viewmodel for exercise as this gets the exercises of the user from database according to the date
     val list:MutableLiveData<ArrayList<Record>> = MutableLiveData()
 
 
@@ -46,6 +46,7 @@ class ViewViewModel : ViewModel() {
 
 }
 
+//data class for the exercise record
 data class Record(var Date:String,var TypeOfWorkout:String, var distance:String, var duration:String) {
 
 }

@@ -24,6 +24,9 @@ import project.st991548772.vardhmanchandan.databinding.FragmentSignUpBinding
 import java.util.*
 
 
+
+
+//in this class we take the information from the user and add all the values in the database
 class SignUpFragment : Fragment() {
 
 
