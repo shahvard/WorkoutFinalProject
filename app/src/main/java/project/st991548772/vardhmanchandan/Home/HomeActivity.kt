@@ -3,7 +3,9 @@ package project.st991548772.vardhmanchandan.Home
 import android.app.Activity
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import project.st991548772.vardhmanchandan.R
@@ -31,15 +33,18 @@ class HomeActivity : AppCompatActivity(){
         val navController=this.findNavController(R.id.studentNavHost)
         val bottomView=binding.bottomNavigationView
         bottomView.setupWithNavController(navController)
-        //replaceFragment(HomeFragment())
 
+
+
+        //replaceFragment(HomeFragment())
+/*
         var actionBar = getSupportActionBar()
 
         // showing the back button in action bar
         if (actionBar != null) {
             actionBar.setHomeAsUpIndicator(R.drawable.back);
             actionBar.setDisplayHomeAsUpEnabled(true)
-        }
+        }*/
 /*binding.bottomNavigationView.setOnItemSelectedListener {
     when(it.itemId){
         R.id.home-> replaceFragment(HomeFragment())
@@ -153,7 +158,7 @@ class HomeActivity : AppCompatActivity(){
 
     }*/
 
-    override fun onContextItemSelected(item: MenuItem): Boolean {
+   /* override fun onContextItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> {
                 onBackPressed()
@@ -161,5 +166,7 @@ class HomeActivity : AppCompatActivity(){
             }
         }
         return super.onOptionsItemSelected(item)
-    }
+    }*/
+
+
 }

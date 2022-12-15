@@ -8,10 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -56,6 +58,23 @@ private lateinit var binding:FragmentExerciseCRUDBinding
             Navigation.findNavController(this.requireView())
                 .navigate(R.id.action_exerciseCRUDFragment_to_addFragment)
         }
+
+        val c = Calendar.getInstance()
+
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+
+        val day = c.get(Calendar.DAY_OF_MONTH)
+        val dat = (day.toString() + "-" + (month + 1) + "-" + year)
+
+        viewModel.getFromDatabase(dat,email)
+
+
+        val appCompat = requireActivity() as AppCompatActivity
+        val navHostFragment = appCompat.supportFragmentManager.findFragmentById(R.id.studentNavHost) as NavHostFragment
+        val navController = navHostFragment.findNavController()
+
+        binding.bottomNav.setupWithNavController(navController)
 
         edt.setOnClickListener {
             val c = Calendar.getInstance()

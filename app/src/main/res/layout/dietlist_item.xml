@@ -55,9 +55,6 @@ android:layout_marginTop="30dp" >
                 android:layout_height="45dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="20dp"
-
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_toRightOf="@+id/dateTxtView"
                 android:text="Running"
@@ -96,7 +93,7 @@ android:layout_marginTop="30dp" >
                 android:layout_width="wrap_content"
                 android:layout_height="45dp"
                 android:layout_toRightOf="@+id/itemTxtView"
-                android:layout_below="@+id/typeEditText"
+                android:layout_below="@+id/typeTxtView"
                 android:layout_marginLeft="20dp"
                 android:text="5 minutes"
                 android:textSize="20sp" />
@@ -105,10 +102,10 @@ android:layout_marginTop="30dp" >
                 android:id="@+id/caloriesEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="45dp"
-                android:text="5 minutes"
-                android:layout_toRightOf="@+id/itemTxtView"
                 android:layout_below="@+id/typeEditText"
                 android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/itemEditText"
+                android:text="5 minutes"
                 android:textSize="15sp" />
 
             <RelativeLayout

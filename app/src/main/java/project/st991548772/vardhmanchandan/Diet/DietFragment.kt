@@ -7,12 +7,17 @@ import android.text.TextWatcher
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
@@ -118,7 +123,15 @@ class DietFragment : Fragment() {
 
         })
 
+        val appCompat = requireActivity() as AppCompatActivity
+        val navHostFragment = appCompat.supportFragmentManager.findFragmentById(R.id.studentNavHost) as NavHostFragment
+        val navController = navHostFragment.findNavController()
 
+        binding.bottomNav.setupWithNavController(navController)
+
+        binding.goHome.setOnClickListener(){
+            Navigation.findNavController(this.requireView()).navigate(R.id.action_dietFragment_to_homeFragment)
+        }
 
 
 
@@ -141,6 +154,8 @@ class DietFragment : Fragment() {
         rView.layoutManager = LinearLayoutManager(this.requireContext())
         rView.setHasFixedSize(true)
     }
+
+
 
 
 

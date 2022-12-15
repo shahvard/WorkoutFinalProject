@@ -9,8 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -49,6 +53,7 @@ class HomeFragment : Fragment() {
         view.findViewById<TextView>(R.id.welcomeText).text="Welcome ${it.name}"
 
         })
+
 
         val day = Calendar.DAY_OF_MONTH
         Log.d("day",day.toString())
@@ -108,6 +113,75 @@ class HomeFragment : Fragment() {
 
         return view
     }
+
+
+    /*override fun onViewStateRestored(savedInstanceState: Bundle?) {
+
+
+        auth = Firebase.auth
+        binding = DataBindingUtil.setContentView(this.requireActivity(), R.layout.fragment_home)
+
+
+        val currentUser = auth.currentUser
+        email= currentUser?.email.toString()
+        viewModel.getUserPersonalInfo(email)
+        viewModel.user.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+
+            view?.findViewById<TextView>(R.id.welcomeText)?.text="Welcome ${it.name}"
+
+        })
+
+        val day = Calendar.DAY_OF_MONTH
+        Log.d("day",day.toString())
+        var todaysDay="Saturday"
+        when (day){
+            1->todaysDay="Saturday"
+            2->todaysDay="Sunday"
+            3->todaysDay="Monday"
+            4->todaysDay="Tuesday"
+            5->todaysDay="Wednesday"
+            6->todaysDay="Thursday"
+            7->todaysDay="Friday"
+
+        }
+        viewModel.getSchedule(todaysDay,email)
+        viewModel.schedule.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            view?.findViewById<TextView>(R.id.dayTextView)?.text=todaysDay
+            view?.findViewById<TextView>(R.id.timeTextView)?.text=it.startTime +" - "+it.endTime
+            view?.findViewById<TextView>(R.id.distanceTextView)?.text=it.distance
+            view?.findViewById<TextView>(R.id.typeTextView)?.text=it.typeOfWorkout
+            when(it.typeOfWorkout){
+                "Running"->view?.findViewById<ImageView>(R.id.imageView2)?.setImageResource(R.drawable.ic_baseline_directions_run_24)
+                "Cycling"->view?.findViewById<ImageView>(R.id.imageView2)?.setImageResource(R.drawable.ic_baseline_directions_bike_24)
+                "Swimming"-> view?.findViewById<ImageView>(R.id.imageView2)?.setImageResource(R.drawable.swimming)
+
+            }
+
+        })
+
+
+
+        val c=Calendar.getInstance()
+        val month = (c.get(Calendar.MONTH)) + 1
+        viewModel.getExercisesThisMonth(month.toString(),email)
+
+        viewModel.exercisesThisMonth.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            view?.findViewById<TextView>(R.id.numberOfExTextView)?.text=it.toString()
+        })
+
+        viewModel.getCalories(email)
+        viewModel.todaysCalories.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            view?.findViewById<TextView>(R.id.todayCaloriesTextView)?.text=it.toString() +" /"
+        })
+
+        viewModel.totalCalories.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            view?.findViewById<TextView>(R.id.totalCaloriesTextView)?.text=it.toString()
+        })
+
+
+
+            super.onViewStateRestored(savedInstanceState)
+        }*/
 
 
 
