@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#040720"
+        android:orientation="vertical"
+        tools:context=".Home.HomeFragment"
+
+        >
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/welcomeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="32dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:shadowColor="#57000000"
+                android:text="Welcome"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffcc00"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/upcomingExercise"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center"
+                    android:shadowColor="#57000000"
+                    android:text="Upcoming Exercise"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:layout_below="@+id/upcomingExercise"
+                    app:srcCompat="@drawable/ic_baseline_directions_run_24" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/upcomingExercise"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/imageView2"
+                    android:padding="4dp">
+
+
+                    <TextView
+                        android:id="@+id/dayTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Monday"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/timeTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/dayTextView"
+                        android:text="10:00-12:00 "
+
+                        android:textAlignment="center"
+
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/distanceTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/timeTextView"
+                        android:text="2 kms "
+                        android:textAlignment="center"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/typeTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/distanceTextView"
+                        android:text="Running"
+                        android:textAlignment="center"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:padding="0dp"
+                android:weightSum="2.05">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="220dp"
+                    android:layout_below="@+id/distanceTextView"
+                    android:layout_weight="1"
+                    android:background="#ffcc00"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/numberOfExTextTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Number Of Exercises this month"
+                        android:textAlignment="center"
+                        android:textSize="25sp"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/numberOfExTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/numberOfExTextTextView"
+                        android:layout_marginTop="5dp"
+                        android:text="1"
+                        android:textAlignment="center"
+                        android:textSize="70sp"
+                        android:textStyle="bold"
+
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/distanceTextView"
+                    android:layout_weight=".05"
+                    android:background="#ffcc00"
+                    android:padding="0dp" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="220dp"
+                    android:layout_below="@+id/distanceTextView"
+                    android:layout_weight="1"
+                    android:background="#ffcc00"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/numberOfCaloriesTextTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Calories Consumed today"
+                        android:textAlignment="center"
+                        android:textSize="25sp"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/todayCaloriesTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/numberOfCaloriesTextTextView"
+                        android:layout_marginTop="5dp"
+                        android:text="100 /"
+                        android:textAlignment="center"
+                        android:textSize="40sp"
+                        android:textStyle="bold"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/totalCaloriesTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/todayCaloriesTextView"
+
+                        android:text="2500"
+                        android:textAlignment="center"
+                        android:textSize="40sp"
+                        android:textStyle="bold"
+
+                        />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+</ScrollView>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNav"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_nav_menu"
+            android:scrollIndicators="left"/>
+    </RelativeLayout>
+
+</layout>

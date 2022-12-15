@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/afterloginnavigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="project.st991548772.vardhmanchandan.Home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment2_to_exerciseCRUDFragment"
+            app:destination="@id/exerciseCRUDFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeFragment2_to_dietFragment"
+            app:destination="@id/dietFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseCRUDFragment"
+        android:name="project.st991548772.vardhmanchandan.Exercise.ExerciseCRUDFragment"
+        android:label="ExerciseCRUDFragment"
+        tools:layout="@layout/fragment_exercise_c_r_u_d">
+        <action
+            android:id="@+id/action_exerciseCRUDFragment_to_addFragment"
+            app:destination="@id/addFragment"
+            app:popUpTo="@id/exerciseCRUDFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_exerciseCRUDFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="project.st991548772.vardhmanchandan.Exercise.AddExercise.AddFragment"
+        android:label="add_fragment"
+        tools:layout="@layout/add_fragment" >
+        <action
+            android:id="@+id/action_addFragment_to_exerciseCRUDFragment"
+            app:destination="@id/exerciseCRUDFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dietFragment"
+        android:name="project.st991548772.vardhmanchandan.Diet.DietFragment"
+        android:label="fragment_diet"
+        tools:layout="@layout/fragment_diet" >
+        <action
+            android:id="@+id/action_dietFragment_to_addDietFragment"
+            app:destination="@id/addDietFragment" />
+        <action
+            android:id="@+id/action_dietFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addDietFragment"
+        android:name="project.st991548772.vardhmanchandan.Diet.AddDiet.AddDietFragment"
+        android:label="fragment_add_diet"
+        tools:layout="@layout/fragment_add_diet" >
+        <action
+            android:id="@+id/action_addDietFragment_to_dietFragment"
+            app:destination="@id/dietFragment" />
+    </fragment>
+</navigation>

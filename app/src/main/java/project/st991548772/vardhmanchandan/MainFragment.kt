@@ -33,7 +33,15 @@ class MainFragment : Fragment() {
 
         }*/
 
-        binding.login.setOnClickListener(){
+       /* binding.login.setOnClickListener(){
+            view.findNavController()
+                .navigate(R.id.action_mainFragment_to_loginFragment)
+        }*/
+
+        view.findViewById<Button>(R.id.login).setOnClickListener(){
+            view.findNavController()
+                .navigate(R.id.action_mainFragment_to_loginFragment)
+
 
         }
 
